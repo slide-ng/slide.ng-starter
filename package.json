@@ -13,6 +13,6 @@
     "test": "node tests/smoke.mjs"
   },
   "dependencies": {
-    "slide-ng": "latest"
+    "@slide-ng/core": "latest"
   }
 }

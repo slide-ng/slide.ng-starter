@@ -17,7 +17,7 @@ npx degit slide-ng/slide.ng-starter my-talk
 cd my-talk
 ```
 
-(`npx slide-ng create my-talk` makes a smaller deck without the tutorial.)
+(`npx @slide-ng/core create my-talk` makes a smaller deck without the tutorial.)
 
 ## Run
 
@@ -48,7 +48,7 @@ Syntax, themes, export options, offline mode and deployment are covered in the d
 
 ## For the repository owner
 
-slide.ng is not on the npm registry yet, so `package.json` has a placeholder: `"slide-ng": "latest"`. After the first release:
+slide.ng is not on the npm registry yet, so `package.json` has a placeholder: `"@slide-ng/core": "latest"`. After the first release:
 
 1. Replace `latest` with the real range, for example `^0.1.0` (the same thing `slide-ng create` writes).
 2. Run `npm install`, commit `package-lock.json`, and change `npm install` to `npm ci` in both workflows.

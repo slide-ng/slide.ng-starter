@@ -29,8 +29,9 @@ const work = mkdtempSync(join(tmpdir(), 'slide-ng-starter-'));
 const skip = new Set(['.git', 'node_modules', 'dist', '.slide-ng']);
 cpSync(here, work, { recursive: true, filter: (src) => !skip.has(src.slice(here.length + 1).split('/')[0]) });
 mkdirSync(join(work, 'node_modules'));
-symlinkSync(core, join(work, 'node_modules/slide-ng'), 'dir');
-const bin = join(work, 'node_modules/slide-ng/bin/slide-ng.mjs');
+mkdirSync(join(work, 'node_modules/@slide-ng'), { recursive: true });
+symlinkSync(core, join(work, 'node_modules/@slide-ng/core'), 'dir');
+const bin = join(work, 'node_modules/@slide-ng/core/bin/slide-ng.mjs');
 const run = (...args) => execFileSync(process.execPath, [bin, ...args], { cwd: work, encoding: 'utf8', env: { ...process.env, CHROME_PATH: chrome } });
 
 const built = run('build');
