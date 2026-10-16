@@ -34,7 +34,7 @@ transition: fade-out
 
 You write one file, `slides.md`. Each slide becomes an Angular component that is compiled with your app.
 
-<v-clicks>
+<slide-ng-clicks>
 
 - **Markdown first**: write the content, style it later
 - **Angular inside**: `{{ }}`, `@if`, `@for` and your own components
@@ -42,7 +42,7 @@ You write one file, `slides.md`. Each slide becomes an Angular component that is
 - **Presentable**: presenter view, notes, drawing, overview
 - **Portable**: a static site, a PDF, or a folder that works offline
 
-</v-clicks>
+</slide-ng-clicks>
 
 <!--
 Each item above is one click. This note has click markers:
@@ -64,12 +64,12 @@ The table of contents is built from the slides' titles. Use `title` and `level` 
 frontmatter to change how a slide is listed.
 
 ```html
-<slide-toc minDepth="1" maxDepth="1" />
+<slide-ng-toc minDepth="1" maxDepth="1" />
 ```
 
 ::right::
 
-<slide-toc class="text-sm" minDepth="1" maxDepth="2" />
+<slide-ng-toc class="text-sm" minDepth="1" maxDepth="2" />
 
 ---
 layout: image-right
@@ -128,21 +128,21 @@ Block syntax (@if, @for) must be on its own lines. Code fences are never read as
 
 # Clicks
 
-Add `v-click` to any element:
+Add `slide-ng-click` to any element:
 
-<div v-click>This shows up on the first click.</div>
-<div v-click>Then this one.</div>
-<div v-after>And this one shows together with the one before it.</div>
+<div slide-ng-click>This shows up on the first click.</div>
+<div slide-ng-click>Then this one.</div>
+<div slide-ng-after>And this one shows together with the one before it.</div>
 
-<div v-click>
+<div slide-ng-click>
 
-Marks are drawn by hand with <span v-mark.circle.orange="4">`v-mark`</span>, and
-<span v-mark.underline.red="5">underline</span> works on any inline element:
+Marks are drawn by hand with <span slide-ng-mark.circle.orange="4">`slide-ng-mark`</span>, and
+<span slide-ng-mark.underline.red="5">underline</span> works on any inline element:
 
 </div>
 
 ```html
-<span v-mark.circle.orange="4">v-mark</span>
+<span slide-ng-mark.circle.orange="4">slide-ng-mark</span>
 ```
 
 ---
