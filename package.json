@@ -1,0 +1,17 @@
+{
+  "name": "slide-ng-starter",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.22.3" },
+  "scripts": {
+    "dev": "slide-ng dev",
+    "build": "slide-ng build",
+    "export": "slide-ng export",
+    "format": "slide-ng format",
+    "test": "node tests/smoke.mjs"
+  },
+  "dependencies": {
+    "slide-ng": "latest"
+  }
+}

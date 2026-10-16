@@ -1,0 +1,7 @@
+node_modules
+dist
+.slide-ng
+*.log
+.DS_Store
+slides-export*
+*.pdf
