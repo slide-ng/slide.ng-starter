@@ -1,5 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#5b2a86"/>
-  <rect x="12" y="18" width="40" height="26" rx="4" fill="#ffffff"/>
-  <rect x="20" y="50" width="24" height="4" rx="2" fill="#ff4d8d"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" role="img" aria-label="slide.ng"><title>slide.ng</title><path d='M16 2L28 6V18L16 30L4 18V6Z' fill='#E5541A'/><path d='M12 6H24V8H12Z' fill='#B03A0C'/><path d='M8 8H24V20H8Z' fill='#6B230A'/><path d='M8 8H24V18H8Z' fill='#FAF6EE'/><path d='M10 10H18V14H10Z' fill='#CC4209'/><path d='M10 16H16V18H10Z' fill='#8F300A'/></svg>

@@ -1,3 +1,8 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/readme-banner-dark.png">
+  <img alt="slide.ng" src="assets/readme-banner-light.png" width="800">
+</picture>
+
 # slide.ng starter
 
 A template for [slide.ng](https://github.com/slide-ng/slide.ng): presentations written in markdown, with Angular template syntax inside.
