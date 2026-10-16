@@ -2,6 +2,7 @@
   "name": "slide-ng-starter",
   "version": "0.0.0",
   "private": true,
+  "license": "MIT",
   "type": "module",
   "engines": { "node": ">=22.22.3" },
   "scripts": {
