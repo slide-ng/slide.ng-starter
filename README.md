@@ -111,6 +111,26 @@ Before the release, to try the deck with a local checkout without touching the r
 (`npm test` does this) or run `npm install --no-save ../slide.ng` and do not commit the result.
 The URLs in this file (`github.com/slide-ng/...`) are placeholders for the final repository locations.
 
+## Maintainers
+
+<!-- prettier-ignore-start -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/erkamyaman"><img src="https://avatars.githubusercontent.com/u/88717125?v=4&s=100" width="100px;" alt="Erkam Yaman"/><br /><sub><b>Erkam Yaman</b></sub></a><br /><sub>Lead maintainer</sub></td>
+    </tr>
+  </tbody>
+</table>
+<!-- prettier-ignore-end -->
+
+## Sponsors
+
+This starter is free and open source. If it helps your work, please consider sponsoring it. Your support keeps development going.
+
+<p>
+  <a href="https://github.com/sponsors/erkamyaman"><img src="https://img.shields.io/badge/Sponsor-%E2%9D%A4-db61a2?logo=githubsponsors&logoColor=white" alt="Sponsor on GitHub" /></a>
+</p>
+
 ## License
 
 MIT, see [LICENSE](LICENSE).
