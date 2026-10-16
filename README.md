@@ -133,4 +133,8 @@ This starter is free and open source. If it helps your work, please consider spo
 
 ## License
 
-MIT, see [LICENSE](LICENSE).
+MIT, see [LICENSE](LICENSE). The demo deck was modelled on the starter deck of Slidev (MIT, Anthony Fu and Slidev contributors); the licence text is in [NOTICE](NOTICE).
+
+## Disclaimer
+
+slide.ng is an independent open-source project. It is not affiliated with or endorsed by the Angular team or Google, or by Slidev. Angular is a trademark of Google LLC. Slidev is a project of its own maintainers. The names are used only to describe what slide.ng works with or is based on. This is a plain notice, not legal advice.
