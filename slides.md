@@ -78,7 +78,7 @@ image: /layouts.svg
 
 # Layouts
 
-There are 19 layouts. Set one in the frontmatter of a slide:
+There are 19 layouts, plus `404` and `error`. Set one in the frontmatter of a slide:
 
 ```md
 ---
@@ -156,7 +156,7 @@ class: pl-4
 
 Highlights follow the clicks. Each `|` is one step:
 
-```ts {1-2|4|6-8|all} [greeter.ts] {lines:true}
+```ts [greeter.ts] {1-2|4|6-8|all} {lines:true}
 import { Component, signal } from '@angular/core';
 
 const title = signal('Hello');
