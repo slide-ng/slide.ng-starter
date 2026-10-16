@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 160" width="720" height="160" font-family="sans-serif" font-size="22">
+  <g fill="none" stroke="#5b2a86" stroke-width="4">
+    <rect x="10" y="40" width="180" height="80" rx="14"/>
+    <rect x="270" y="40" width="180" height="80" rx="14"/>
+    <rect x="530" y="40" width="180" height="80" rx="14"/>
+    <path d="M190 80h80M450 80h80M256 66l14 14-14 14M516 66l14 14-14 14"/>
+  </g>
+  <g fill="#5b2a86" text-anchor="middle">
+    <text x="100" y="88">slides.md</text>
+    <text x="360" y="88">Angular app</text>
+    <text x="620" y="88">static site</text>
+  </g>
+</svg>
