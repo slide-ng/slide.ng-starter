@@ -27,8 +27,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
-      # Use `npm ci` instead once package-lock.json is committed.
-      - run: npm install
+      - run: npm ci
       # The base path comes from the repository name. A user site (<user>.github.io) lives at /.
       - name: Build
         run: |

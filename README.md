@@ -48,11 +48,7 @@ Syntax, themes, export options, offline mode and deployment are covered in the d
 
 ## For the repository owner
 
-slide.ng is not on the npm registry yet, so `package.json` has a placeholder: `"@slide-ng/core": "latest"`. After the first release:
-
-1. Replace `latest` with the real range, for example `^0.1.0` (the same thing `slide-ng create` writes).
-2. Run `npm install`, commit `package-lock.json`, and change `npm install` to `npm ci` in both workflows.
-3. Mark the repository as a template (Settings > Template repository).
+Mark the repository as a template (Settings > Template repository). The workflows use `npm ci` with the committed `package-lock.json`; update it with `npm install` when you change the `@slide-ng/core` range in `package.json`.
 
 The URLs in this file (`github.com/slide-ng/...`) are placeholders for the final repository locations.
 

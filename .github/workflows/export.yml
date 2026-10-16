@@ -18,8 +18,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
-      # Use `npm ci` instead once package-lock.json is committed.
-      - run: npm install
+      - run: npm ci
       # slide.ng never downloads a browser; the runner's Chrome is used.
       - run: npx slide-ng export --output slides.pdf
         env:
