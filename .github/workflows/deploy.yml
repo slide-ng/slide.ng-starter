@@ -1,0 +1,42 @@
+# Builds the deck and publishes it to GitHub Pages at https://<user>.github.io/<repository>/
+# Turn it on once: Settings > Pages > Source: GitHub Actions.
+name: Deploy slides
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      # Use `npm ci` instead once package-lock.json is committed.
+      - run: npm install
+      # The base path comes from the repository name. A user site (<user>.github.io) lives at /.
+      - name: Build
+        run: |
+          repo="${GITHUB_REPOSITORY#*/}"
+          case "$repo" in *.github.io) base="/" ;; *) base="/$repo/" ;; esac
+          npx slide-ng build --base "$base"
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -134,12 +134,12 @@ Add `v-click` to any element:
 <div v-click>Then this one.</div>
 <div v-after>And this one shows together with the one before it.</div>
 
-<v-click>
+<div v-click>
 
 Marks are drawn by hand with <span v-mark.circle.orange="4">`v-mark`</span>, and
 <span v-mark.underline.red="5">underline</span> works on any inline element:
 
-</v-click>
+</div>
 
 ```html
 <span v-mark.circle.orange="4">v-mark</span>
@@ -243,8 +243,6 @@ graph LR
   C --> D[site / PDF]
 ```
 
-<img src="/pipeline.svg" alt="slides.md to Angular app to static site" class="mt-4 w-96 opacity-80" />
-
 ---
 
 # Your own components
@@ -335,6 +333,8 @@ npm run export
 - `build` makes a static site in `dist/`. `netlify.toml`, `vercel.json` and a GitHub Pages workflow are included.
 - `export` makes a PDF (needs Chromium). Add `-- --with-clicks` for one page per click.
 - `slide-ng build --offline` makes a folder you open from disk with no server, for rooms without Wi-Fi.
+
+<img src="/pipeline.svg" alt="slides.md to Angular app to static site" class="my-4 w-96 opacity-80" />
 
 > [!TIP]
 > Press <kbd>o</kbd> for the overview, <kbd>g</kbd> to go to a slide, <kbd>d</kbd> for dark mode.

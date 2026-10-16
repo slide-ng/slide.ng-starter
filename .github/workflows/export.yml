@@ -1,0 +1,30 @@
+# Makes a PDF of the deck and attaches it to the run as an artifact.
+# Run it by hand (Actions > Export PDF > Run workflow) or push a tag such as v1.
+name: Export PDF
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      # Use `npm ci` instead once package-lock.json is committed.
+      - run: npm install
+      # slide.ng never downloads a browser; the runner's Chrome is used.
+      - run: npx slide-ng export --output slides.pdf
+        env:
+          CHROME_PATH: /usr/bin/google-chrome
+      - uses: actions/upload-artifact@v4
+        with:
+          name: slides-pdf
+          path: slides.pdf
