@@ -94,7 +94,16 @@ try {
 
 // Export to PDF with the same Chromium and compare the page count with the slides.
 run('export', '--output', join(work, 'deck.pdf'));
-const { PDFDocument } = createRequire(join(core, 'package.json'))('pdf-lib');
+// slide.ng uses the maintained fork @cantoo/pdf-lib (older versions used pdf-lib itself).
+const coreRequire = createRequire(join(core, 'package.json'));
+const pdfLib = () => {
+  try {
+    return coreRequire('@cantoo/pdf-lib');
+  } catch {
+    return coreRequire('pdf-lib');
+  }
+};
+const { PDFDocument } = pdfLib();
 const pages = (await PDFDocument.load(readFileSync(join(work, 'deck.pdf')))).getPageCount();
 check('the PDF has one page per slide', pages === slides, `${pages} pages, ${slides} slides`);
 
