@@ -13,7 +13,7 @@ The deck in `slides.md` is a short tutorial. Read it, then replace it with your 
 On GitHub press **Use this template** (the repository must be marked as a template in Settings), or from a terminal:
 
 ```sh
-npx degit slide-ng/slide.ng-starter my-talk
+npx degit slide-ng/starter my-talk
 cd my-talk
 ```
 

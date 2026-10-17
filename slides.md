@@ -302,7 +302,7 @@ theme: seriph
 
 </div>
 
-The official themes are packages from the slide.ng-themes repository:
+The official themes are packages from the slide-ng/themes repository:
 
 ```sh
 npm i -D @slide-ng/theme-seriph
