@@ -33,16 +33,16 @@ npm run format     # tidies the markdown
 
 ## What is in the folder
 
-| path                          | what it is                                                                    |
-| ----------------------------- | ----------------------------------------------------------------------------- |
-| `slides.md`                   | the deck: headmatter, then one slide per `---`                                |
-| `components/`                 | your own Angular components, usable as tags in slides                         |
+| path                          | what it is                                                                   |
+| ----------------------------- | ---------------------------------------------------------------------------- |
+| `slides.md`                   | the deck: headmatter, then one slide per `---`                               |
+| `components/`                 | your own Angular components, usable as tags in slides                        |
 | `snippets/`                   | code files shown with `<<< @/snippets/greeter.ts#greeter`                    |
-| `pages/`                      | slides in other markdown files, pulled in with `src: ./pages/more-slides.md`  |
-| `public/`                     | pictures and other files                                                      |
-| `tests/smoke.mjs`             | builds the deck and opens every slide in Chromium (`npm test`)                |
-| `netlify.toml`, `vercel.json` | hosting settings                                                              |
-| `.github/workflows/`          | `deploy.yml` (GitHub Pages) and `export.yml` (PDF artifact)                   |
+| `pages/`                      | slides in other markdown files, pulled in with `src: ./pages/more-slides.md` |
+| `public/`                     | pictures and other files                                                     |
+| `tests/smoke.mjs`             | builds the deck and opens every slide in Chromium (`npm test`)               |
+| `netlify.toml`, `vercel.json` | hosting settings                                                             |
+| `.github/workflows/`          | `deploy.yml` (GitHub Pages) and `export.yml` (PDF artifact)                  |
 
 Syntax, themes, export options, offline mode and deployment are covered in the documentation at [slide-ng.dev](https://slide-ng.dev).
 
@@ -74,7 +74,7 @@ This starter is free and open source. If it helps your work, please consider spo
 
 ## License
 
-MIT, see [LICENSE](LICENSE). The demo deck was modelled on the starter deck of Slidev (MIT, Anthony Fu and Slidev contributors); the licence text is in [NOTICE](NOTICE).
+MIT License © 2026 [Erkam Yaman](https://github.com/erkamyaman) ([LICENSE](LICENSE)). The demo deck was modelled on the starter deck of Slidev (MIT, Anthony Fu and Slidev contributors); the licence text is in [NOTICE](NOTICE).
 
 ## Disclaimer
 
