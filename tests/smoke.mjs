@@ -1,9 +1,10 @@
-// Smoke test: builds the deck with a local slide.ng checkout, opens every slide in Chromium and exports a PDF.
+// Smoke test: builds the deck, opens every slide in Chromium and exports a PDF.
 //
-//   SLIDE_NG_DIR=../slide.ng node tests/smoke.mjs      (default: ../slide.ng, next to this repository)
+//   node tests/smoke.mjs                               (uses the installed @slide-ng/core, run `npm install` first)
+//   SLIDE_NG_DIR=../slide.ng node tests/smoke.mjs      (uses a local slide.ng checkout; decks with other Angular libraries such as ng-icons need the installed one)
 //   CHROME_PATH=/path/to/chrome                        (default: /opt/pw-browsers/chromium-1194/chrome-linux/chrome)
 //
-// The deck is copied to a temporary folder and slide.ng is linked into its node_modules, so nothing in this repository changes.
+// The deck is copied to a temporary folder with node_modules linked in, so nothing in this repository changes.
 import { execFileSync } from 'node:child_process';
 import { cpSync, createReadStream, existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, statSync, symlinkSync } from 'node:fs';
 import { createRequire } from 'node:module';
@@ -13,9 +14,10 @@ import { extname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const here = resolve(fileURLToPath(import.meta.url), '../..');
-const core = resolve(here, process.env.SLIDE_NG_DIR ?? '../slide.ng');
+const local = process.env.SLIDE_NG_DIR ? resolve(here, process.env.SLIDE_NG_DIR) : null;
+const core = local ?? resolve(here, 'node_modules/@slide-ng/core');
 const chrome = process.env.CHROME_PATH ?? '/opt/pw-browsers/chromium-1194/chrome-linux/chrome';
-if (!existsSync(join(core, 'bin/slide-ng.mjs'))) throw new Error(`No slide.ng in ${core}. Set SLIDE_NG_DIR.`);
+if (!existsSync(join(core, 'bin/slide-ng.mjs'))) throw new Error(`No slide.ng in ${core}. Run npm install, or set SLIDE_NG_DIR.`);
 const { chromium } = createRequire(join(core, 'package.json'))('playwright-core');
 
 let failed = 0;
@@ -28,9 +30,12 @@ const check = (name, ok, detail = '') => {
 const work = mkdtempSync(join(tmpdir(), 'slide-ng-starter-'));
 const skip = new Set(['.git', 'node_modules', 'dist', '.slide-ng']);
 cpSync(here, work, { recursive: true, filter: (src) => !skip.has(src.slice(here.length + 1).split('/')[0]) });
-mkdirSync(join(work, 'node_modules'));
-mkdirSync(join(work, 'node_modules/@slide-ng'), { recursive: true });
-symlinkSync(core, join(work, 'node_modules/@slide-ng/core'), 'dir');
+if (local) {
+  mkdirSync(join(work, 'node_modules/@slide-ng'), { recursive: true });
+  symlinkSync(core, join(work, 'node_modules/@slide-ng/core'), 'dir');
+} else {
+  symlinkSync(join(here, 'node_modules'), join(work, 'node_modules'), 'dir');
+}
 const bin = join(work, 'node_modules/@slide-ng/core/bin/slide-ng.mjs');
 const run = (...args) => execFileSync(process.execPath, [bin, ...args], { cwd: work, encoding: 'utf8', env: { ...process.env, CHROME_PATH: chrome } });
 
