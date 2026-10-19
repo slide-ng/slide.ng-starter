@@ -37,6 +37,7 @@ npm run format     # tidies the markdown
 | ----------------------------- | ---------------------------------------------------------------------------- |
 | `slides.md`                   | the deck: headmatter, then one slide per `---`                               |
 | `components/`                 | your own Angular components, usable as tags in slides                        |
+| `setup/`                      | `main.ts` lists the ng-icons icons the deck uses                             |
 | `snippets/`                   | code files shown with `<<< @/snippets/greeter.ts#greeter`                    |
 | `pages/`                      | slides in other markdown files, pulled in with `src: ./pages/more-slides.md` |
 | `public/`                     | pictures and other files                                                     |

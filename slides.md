@@ -263,6 +263,37 @@ into the slides that use its tag.
 -->
 
 ---
+
+# Icons
+
+Two ways to draw an icon. Iconify sets are tags, styled by the text colour and size:
+
+```html
+<carbon-apps /> <mdi-account-circle class="text-red-500 text-3xl" />
+```
+
+<div class="mt-4 flex items-center gap-6 text-4xl">
+  <carbon-apps /> <mdi-account-circle class="text-red-500" /> <ph-star-fill class="text-amber-500" />
+</div>
+
+ng-icons draws inline SVG, with a size, colour and stroke width:
+
+```html
+<starter-icon name="lucideRocket" size="48" color="#e5541a" />
+```
+
+<div class="mt-4 flex items-center gap-6">
+  <starter-icon name="lucideRocket" size="48" color="#e5541a" />
+  <starter-icon name="lucideHeart" size="48" color="crimson" strokeWidth="1" />
+  <starter-icon name="lucideZap" size="48" />
+</div>
+
+<!--
+The Iconify tags need no setup: only the icons you use end up in the CSS.
+The ng-icons ones are listed in setup/main.ts and wrapped by components/icon.ts.
+-->
+
+---
 src: ./pages/more-slides.md
 ---
 
