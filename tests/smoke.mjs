@@ -85,7 +85,11 @@ try {
     await page.waitForFunction((n) => document.querySelector('#hud')?.innerText.startsWith(`slide ${n}/`), n);
     if (await page.locator('starter-counter').count()) {
       await page.locator('starter-counter button').nth(1).click();
-      check('the custom counter component renders and counts', (await page.locator('starter-counter span').innerText()).trim() === '11', `slide ${n}`);
+      // Angular draws the new count after the click event, not during it: wait for it (up to 5 s).
+      const counted = await page
+        .waitForFunction(() => document.querySelector('starter-counter span')?.textContent.trim() === '11', null, { timeout: 5000 })
+        .then(() => true, () => false);
+      check('the custom counter component renders and counts', counted, `slide ${n}, shows ${(await page.locator('starter-counter span').innerText()).trim()}`);
       break;
     }
     if (n === slides) check('the custom counter component renders and counts', false, 'no starter-counter on any slide');
