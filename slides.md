@@ -13,6 +13,8 @@ transition: slide-left
 drawings:
   persist: false
 duration: 20min
+# A thin bar along the bottom that fills as the talk goes on (also 'top', or false for none).
+progressBar: true
 ---
 
 # Welcome to slide.ng
@@ -133,16 +135,18 @@ Add `slide-ng-click` to any element:
 <div slide-ng-click>This shows up on the first click.</div>
 <div slide-ng-click>Then this one.</div>
 <div slide-ng-after>And this one shows together with the one before it.</div>
+<div slide-ng-click.up>This one comes up from below: a preset, written after a dot.</div>
 
 <div slide-ng-click>
 
-Marks are drawn by hand with <span slide-ng-mark.circle.orange="4">`slide-ng-mark`</span>, and
-<span slide-ng-mark.underline.red="5">underline</span> works on any inline element:
+Marks are drawn by hand with <span slide-ng-mark.circle.orange="5">`slide-ng-mark`</span>, and
+<span slide-ng-mark.underline.red="6">underline</span> works on any inline element:
 
 </div>
 
 ```html
-<span slide-ng-mark.circle.orange="4">slide-ng-mark</span>
+<div slide-ng-click.up>...</div>   <!-- also fade, left, right, down, scale -->
+<span slide-ng-mark.circle.orange="5">slide-ng-mark</span>
 ```
 
 ---
