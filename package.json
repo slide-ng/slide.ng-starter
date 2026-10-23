@@ -18,6 +18,6 @@
   "dependencies": {
     "@ng-icons/core": "^36.1.0",
     "@ng-icons/lucide": "^36.1.0",
-    "@slide-ng/core": "^1.0.0"
+    "@slide-ng/core": "^2.0.0"
   }
 }

@@ -47,6 +47,26 @@ npm run format     # tidies the markdown
 
 Syntax, themes, export options, offline mode and deployment are covered in the documentation at [slide-ng.dev](https://slide-ng.dev).
 
+## Upgrading a deck made with 1.x
+
+This starter uses `@slide-ng/core` 2.x. A talk started from an earlier copy of it moves up with:
+
+```sh
+npm install @slide-ng/core@^2.0.0
+```
+
+The tutorial deck needed no changes for 2.0. Your own slides might: read "Upgrading from 1.x" in the
+[slide.ng changelog](https://github.com/slide-ng/slide.ng/blob/main/CHANGELOG.md) first. The changes most likely to show are:
+
+- plain HTML attributes such as `<div m="4">` or `<table border="1">` are now read as utilities (`unocss: { attributify: false }` in the headmatter turns that off);
+- `slide-ng-click.hide` now hides the element, so that slide has one more click;
+- the screen stays awake while the deck is open (`wakeLock: false` turns it off);
+- links to `https://` addresses open in a new tab;
+- an `index.html` next to `slides.md` becomes part of the page.
+
+Version 2.0 also adds a progress bar (`progressBar: true`, used in this deck) and click animation presets
+(`slide-ng-click.up`, shown on the Clicks slide).
+
 ## For the repository owner
 
 Mark the repository as a template (Settings > Template repository). The workflows use `npm ci` with the committed `package-lock.json`; update it with `npm install` when you change the `@slide-ng/core` range in `package.json`.
