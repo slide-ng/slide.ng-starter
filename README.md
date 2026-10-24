@@ -67,6 +67,10 @@ The tutorial deck needed no changes for 2.0. Your own slides might: read "Upgrad
 Version 2.0 also adds a progress bar (`progressBar: true`, used in this deck) and click animation presets
 (`slide-ng-click.up`, shown on the Clicks slide).
 
+Version 2.1 adds `navPosition` to move the navigation bar (commented out in the headmatter of `slides.md`) and `languages`,
+to write one deck in several languages with a language menu in the bar. See the
+[slide.ng changelog](https://github.com/slide-ng/slide.ng/blob/main/CHANGELOG.md).
+
 ## For the repository owner
 
 Mark the repository as a template (Settings > Template repository). The workflows use `npm ci` with the committed `package-lock.json`; update it with `npm install` when you change the `@slide-ng/core` range in `package.json`.
