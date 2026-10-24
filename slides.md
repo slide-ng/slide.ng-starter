@@ -13,6 +13,9 @@ transition: slide-left
 drawings:
   persist: false
 duration: 20min
+# Where the navigation bar sits: bottom-left (the default), bottom-center, bottom-right, top-left,
+# top-center or top-right.
+# navPosition: bottom-left
 # A thin bar along the bottom that fills as the talk goes on (also 'top', or false for none).
 progressBar: true
 ---
